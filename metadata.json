@@ -1,0 +1,8 @@
+{
+  "name": "체리출장마사지 수도권",
+  "description": "체리출장마사지 수도권 전지역 24시간 방문마사지. 서울, 경기, 인천 100% 후불제, 선입금 없음, 평균 30분 내외 신속 방문.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

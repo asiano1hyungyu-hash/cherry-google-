@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.cherrymassage.kr/sitemap.xml
+RSS: https://www.cherrymassage.kr/rss.xml
+Host: www.cherrymassage.kr
