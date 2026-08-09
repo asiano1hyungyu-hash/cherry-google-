@@ -47,6 +47,20 @@
   <meta name="twitter:image" content="https://www.cherrymassage.kr/cherrymassage.png">
   <meta name="twitter:image:alt" content="체리출장마사지 수도권출장마사지 메인 이미지">
 
+  <!-- Inline theme detection script to prevent theme flash (FOUC) -->
+  <script>
+    (function() {
+      try {
+        var savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
   <!-- Pure External CSS -->
   <link rel="stylesheet" href="/style.css">
 
@@ -206,8 +220,11 @@
           <span>💬</span> 카톡예약
         </a>
         <a href="tel:0503-6984-9892" class="header-call-btn" title="체리출장마사지 24시 전화 연결">
-          <span>📞</span> 0503-6984-9892
+          <span>📞</span> <span class="phone-text">0503-6984-9892</span>
         </a>
+        <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="다크 모드로 변경" title="다크 모드로 변경">
+          <span class="theme-icon" aria-hidden="true">🌙</span>
+        </button>
       </div>
 
       <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="모바일 메뉴 열기" aria-expanded="false">
