@@ -85,7 +85,4 @@ if (!fs.existsSync('./public')) {
 fs.writeFileSync('./favicon.png', faviconBuf);
 fs.writeFileSync('./public/favicon.png', faviconBuf);
 
-fs.writeFileSync('./og-image.png', ogBuf);
-fs.writeFileSync('./public/og-image.png', ogBuf);
-
-console.log('Successfully generated favicon.png and og-image.png in root and public!');
+console.log('Successfully generated favicon.png in root and public!');
