@@ -192,7 +192,7 @@ const initToastAndPhoneCopy = () => {
   }
 };
 
-// 6. Highlight Table Row
+// 6. Highlight Table Row & Mobile Course Rows
 const initTableHighlight = () => {
   const tableRows = document.querySelectorAll('.course-table tbody tr');
   tableRows.forEach(row => {
@@ -207,6 +207,24 @@ const initTableHighlight = () => {
         const toast = document.getElementById('toastNotice');
         if (toast) {
           toast.textContent = '선택 코스: ' + courseName + ' (' + coursePrice + ') - 전화/문자로 문의주세요!';
+          toast.classList.add('show');
+          setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+      });
+    }
+  });
+
+  const mobileRows = document.querySelectorAll('.mobile-course-row');
+  mobileRows.forEach(row => {
+    if (!row.dataset.rowBound) {
+      row.dataset.rowBound = 'true';
+      row.addEventListener('click', () => {
+        const time = row.querySelector('.mobile-time-badge')?.textContent?.trim() || '';
+        const price = row.querySelector('.mobile-price-val')?.textContent?.trim() || '';
+        const cardHeader = row.closest('.mobile-course-card')?.querySelector('.mobile-course-badge')?.textContent?.trim() || '';
+        const toast = document.getElementById('toastNotice');
+        if (toast) {
+          toast.textContent = '선택 코스: ' + cardHeader + ' ' + time + ' (' + price + ') - 전화/문자로 문의주세요!';
           toast.classList.add('show');
           setTimeout(() => toast.classList.remove('show'), 3000);
         }
